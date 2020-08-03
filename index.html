@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>index</title>
+        <style type="text/css" media="all">
+            /*重置浏览器*/
+            *{padding:0; margin:0;}
+            li{list-style: none;}
+            a{text-decoration: none;}
+            img{border: none;}
+            table{border-collapse: collapse;}
+            input,textarea{outline: nonere;resize: none;}
+
+            body{font-size: 13px;}
+
+            /*公共类*/
+            .highlight{
+                background-color: rgb(219, 40, 40);
+            }
+
+            /*内容*/
+            img,wrap{height: 250px;}
+            img,wrap,div{width: 750px;}
+            div,a{height: 36px;}
+
+            wrap{overflow:hidden; white-space: nowrap; display: block; scroll-behavior: smooth;}
+
+            a{color:white;}
+            div{display: flex; position: absolute; top:214px;}
+            a{
+                transition: background-color 0.5s;
+                width: 20%; background-color: rgba(29, 29, 29, 0.8);
+                text-align: center;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-align-items: center;
+                align-items: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                }
+            .lr{border-left-style: solid; border-color: rgb(197, 196, 196); border-width: 1px;}
+        </style>
+    </head>
+    <body>
+        <wrap id="wrap">
+            <img id="a" src="a.jpg" alt="" data-eid="1">
+            <img id="b" src="b.jpg" alt="" data-eid="2">
+            <img id="c" src="c.jpg" alt="" data-eid="3">
+            <img id="d" src="d.jpg" alt="" data-eid="4">
+            <img id="e" src="e.jpg" alt="" data-eid="5">
+            <div>
+                <a id="a_click" class="highlight" href="javascript:void(0)" data-eid="1">共度中国节·端</a>
+                <a id="b_click" href="javascript:void(0)" class="lr" data-eid="2">佛系科技</a>
+                <a id="c_click" href="javascript:void(0)" class="lr" data-eid="3">地球人实在太凶猛</a>
+                <a id="d_click" href="javascript:void(0)" class="lr" data-eid="4">挂机死神就能变强</a>
+                <a id="e_click" href="javascript:void(0)" class="lr" data-eid="5">花千骨重制版</a>
+            </div>
+        </wrap>
+
+        <script type="text/javascript">
+            //事件触发模块
+            var aclick=document.getElementById("a_click");
+            var bclick=document.getElementById("b_click");
+            var cclick=document.getElementById("c_click");
+            var dclick=document.getElementById("d_click");
+            var eclick=document.getElementById("e_click");
+            aclick.addEventListener("click",function(){
+                changeHash('#a');
+                highlight('#a_click');
+            });
+            bclick.addEventListener("click",function(){
+                changeHash('#b');
+                highlight('#b_click');
+            });
+            cclick.addEventListener("click",function(){
+                changeHash('#c');
+                highlight('#c_click');
+            });
+            dclick.addEventListener("click",function(){
+                changeHash('#d');
+                highlight('#d_click');
+            });
+            eclick.addEventListener("click",function(){
+                changeHash('#e');
+                highlight('#e_click');
+            });
+
+            //锚点跳转模块
+            function changeHash(idname) {
+                document.querySelector(idname).scrollIntoView(true);
+            }
+            
+            //高亮模块
+            function highlight(idname){
+                document.getElementById("a_click").style.background='rgba(29, 29, 29, 0.8)';
+                document.getElementById("b_click").style.background='rgba(29, 29, 29, 0.8)';
+                document.getElementById("c_click").style.background='rgba(29, 29, 29, 0.8)';
+                document.getElementById("d_click").style.background='rgba(29, 29, 29, 0.8)';
+                document.getElementById("e_click").style.background='rgba(29, 29, 29, 0.8)';
+                document.querySelector(idname).style.background='rgb(219, 40, 40)';
+            }
+        </script>
+    </body>
+</html>
